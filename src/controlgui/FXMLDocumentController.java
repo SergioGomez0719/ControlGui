@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -19,17 +22,47 @@ import javafx.scene.control.Label;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label;
+    private Canvas lienzo;
     
+    GraphicsContext g; 
+    GraphicsContext p; 
+            
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void crearcirculo(ActionEvent event) {
+        g.setStroke(Color.BLUE);
+         g.setFill(Color.PINK);
+        g.setLineWidth(3);
+        g.strokeOval(3, 3, 100, 100);
+        g.fillOval(3, 3, 100, 100);
+        
     }
-    
+    @FXML
+    private void creartriangulo(ActionEvent event) {
+        g.setStroke(Color.BLUE);
+        g.setFill(Color.ORANGE);
+        g.setLineWidth(3);
+        g.strokeRect(100, 100, 100, 100);
+        g.fillRect(100, 100, 100, 100);
+      
+    }
+     @FXML
+    private void crearectangulo(ActionEvent event) {
+        g.setStroke(Color.BLUE);
+        g.setFill(Color.BROWN);
+        g.setLineWidth(10);
+        g.strokeRect(250,200, 100, 200);
+        g.fillRect(250, 200, 100, 200);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        g = lienzo.getGraphicsContext2D();
+        
+        double h = lienzo.getHeight();
+        double w = lienzo.getWidth();
+        
+        g.setStroke(Color.AQUAMARINE);
+        g.setLineWidth(w);
+        g.strokeRect(0, 0, w, h);
     }    
     
 }
