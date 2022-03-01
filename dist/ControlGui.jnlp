@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ControlGui.jnlp">
+  <information>
+    <title>ControlGui</title>
+    <vendor>sergio_a.gomez</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ControlGui.jar" size="4726" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ControlGui" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="Vista.ControlGui"  name="ControlGui" />
+  <update check="always"/>
+</jnlp>
